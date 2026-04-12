@@ -53,9 +53,9 @@
     color: white;
 
     display: flex;
-    justify-content: center;
-    
-    
+    flex-direction: column; /* organiza em coluna */
+    justify-content: space-between; /* joga topo e baixo */
+    padding: 20px;
 }
 
 .video h1{
