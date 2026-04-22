@@ -7,13 +7,11 @@
     font-family: Arial, sans-serif;
 }
 
-html, body {
-    height: 100%;
-}
 
 body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .header {
@@ -74,7 +72,7 @@ main{
 }
 
 .info{
-    height: 90vh;
+    height: 80vh;
     background: 
         linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
         url('../imagens/Atletas.png') no-repeat center 8% / cover;
@@ -153,18 +151,16 @@ main{
 /* Seção do formulário alinhada ao topo e esquerda */
 .formulario{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     align-items: flex-start;
     justify-content: flex-start;
     min-height: 50vh;
     padding: 40px;
     gap: 20px;
-}
-
-.formulario{
     overflow-x: auto; /* 🔥 cria scroll ao invés de quebrar */
 }
+
 
 .formulario h2{
     font-size: 22px;
@@ -174,10 +170,16 @@ main{
 }
 
 /* Container para colocar form e resultado lado a lado */
-.container-imc {
+.layout-imc {
     display: flex;
-    gap: 40px; /* Espaço entre o formulário e o resultado */
-    flex: 1;
+    gap: 30px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.bloco-form {
+    width: 260px;
+    min-width: 600px;
 }
 
 /* Grid layout para o formulário */
@@ -222,25 +224,27 @@ main{
     color: white;
     display: none; /* começa escondido */
     text-align: left;
-    width: 250px;
-    min-width: 250px;
+    width: 260px;
+    min-width: 350px;
     line-height: 1.8;
-    margin-top: 0; /* Remove margem superior para alinhar com o topo do form */
 }
 
 .opcoes{
     background: #444;
     color: white;
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
+
     width: 260px;
-    min-width: 220px;
+    min-width: 350px;
+    max-width: 260px;
 
-    display: none; /* começa escondido */
-
-    flex: 1; /* 🔥 ocupa TODO lado direito */
+    flex: 0 0 260px;
     
+    max-height: 105px;
+    overflow-y: auto;
 
+    display: none;
 }
 
 .opcoes h3{
