@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fomento Corporal</title>
+    <link rel="shortcut icon" href="imagens/Silhueta muscular com pesos de halteres.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body style="background-image: linear-gradient(315deg, #767676, #CBCBCB);">
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="imagens/Silhueta muscular com pesos de halteres.png" alt="Logo">
+        </a>
+
+        <div class="titulo">
+            <h1><pre>Fomento
+   Corporal</pre></h1>
+             
+        </div>
+        <a href="pag2.html" class="btn"><pre>Modele
+  o seu 
+    Corpo</pre></a>
+    </header>
+    
+    <main>
+        <section class="formulario">
+            <h2 style="color: black;">Calcule seu IMC (Indice de Masa Corporal)</h2>
+        
+            <div class="layout-imc">
+        
+                <!-- FORM -->
+                <div class="bloco-form">
+                    <form id="imcForm" class="form-grid">
+                        <input type="text" id="nome" placeholder="Nome" required>
+                        <input type="number" id="altura" placeholder="Altura (m)" step="0.01" required>
+                        <button type="submit" class="btn-confirmar">Confirmar</button>
+        
+                        <input type="text" id="cpf" placeholder="CPF" required>
+                        <input type="number" id="peso" placeholder="Peso (kg)" step="0.1" required>
+                        <button type="button" id="btnAtualizar" class="btn-atualizar">Resetar</button>
+                    </form>
+                </div>
+        
+                <!-- RESULTADO -->
+                <div id="resultado" class="resultado"></div>
+        
+                <!-- OPÇÕES -->
+                <div id="opcoes" class="opcoes">
+                    <h3>Objetivo</h3>
+        
+                    <button>Perder peso</button>
+                    <button>Ganhar peso</button>
+                    <button>Definir corpo</button>
+                    <button>Ganhar músculos</button>
+                </div>
+        
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Fomento Corporal</p>
+    
+        <div class="idioma">
+            <label for="language">Idioma:</label>
+            <select id="language">
+                <option value="pt">Português</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+            </select>
+        </div>
+    </footer>
+    <script>
+        // Função para calcular o IMC
+        document.getElementById("imcForm").addEventListener("submit", function(e){
+            e.preventDefault();
+        
+            let nome = document.getElementById("nome").value;
+            let peso = parseFloat(document.getElementById("peso").value);
+            let altura = parseFloat(document.getElementById("altura").value);
+            let cpf = document.getElementById("cpf").value;
+        
+            // Validação
+            if (!peso || !altura || altura <= 0) {
+                alert("Preencha peso e altura corretamente!");
+                return;
+            }
+        
+            let imc = peso / (altura * altura);
+            imc = imc.toFixed(2);
+        
+            let classificacao = "";
+            let resultado = document.getElementById("resultado");
+        
+            // Reset cor padrão
+            resultado.style.background = "#333";
+        
+            if(imc < 18.5){
+                classificacao = "Abaixo do peso";
+                
+            } else if(imc < 25){
+                classificacao = "Peso normal";
+                
+            } else if(imc < 30){
+                classificacao = "Sobrepeso";
+                
+            } else {
+                classificacao = "Obesidade";
+                
+            }
+        
+            // Mostrar resultado
+            resultado.style.display = "block";
+            resultado.innerHTML = `
+            Cadastro: <strong>${cpf}</strong><br><strong>${nome}</strong>, seu IMC é <strong>${imc}</strong> <br>
+                Classificação: <strong>${classificacao}</strong>
+            `;
+        
+            // Mostrar opções
+            let opcoes = document.getElementById("opcoes");
+            opcoes.style.display = "block";
+        
+            // Destacar botão conforme IMC
+            let botoes = document.querySelectorAll(".opcoes button");
+        
+            // Reset cores
+            botoes.forEach(btn => btn.style.background = "aquamarine");
+        
+            if(imc < 18.5){
+                botoes[1].style.background = "#3498db"; // ganhar peso
+            } else if(imc >= 25){
+                botoes[0].style.background = "#e74c3c"; // perder peso
+            }
+        });
+        
+        
+        // Função para o botão Atualizar (reset)
+        document.getElementById("btnAtualizar").addEventListener("click", function() {
+        
+            // Limpa formulário
+            document.getElementById("imcForm").reset();
+        
+            // Esconde resultado
+            let resultado = document.getElementById("resultado");
+            resultado.style.display = "none";
+            resultado.innerHTML = "";
+        
+            // Esconde opções
+            document.getElementById("opcoes").style.display = "none";
+        
+            // Foco no nome
+            document.getElementById("nome").focus();
+        });
+        </script>
+</body>
+</html> 
+
