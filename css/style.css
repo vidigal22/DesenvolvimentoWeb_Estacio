@@ -27,7 +27,7 @@ body {
 .logo {
     position: absolute;
     left: 15px;
-    width: 60px; /* ajusta se quiser*/
+    width: 60px;
 }
 
 .logo img{
@@ -40,7 +40,7 @@ body {
     cursor: pointer;
 }
 
-/* centralizar o texto */
+/* texto central */
 .titulo {
     text-align: center;
 }
@@ -50,6 +50,7 @@ body {
     font-size: 19px;
 }
 
+/* botao a direita*/
 .btn {
     position: absolute;
     right: 20px;
@@ -79,8 +80,8 @@ main{
     color: white;
 
     display: flex;
-    flex-direction: column; /* organiza em coluna */
-    justify-content: space-between; /* joga topo e baixo */
+    flex-direction: column;
+    justify-content: space-between;
     padding: 20px;
 }
 
@@ -101,8 +102,8 @@ main{
 .videos-container{
     display: flex;
     justify-content: center;
-    gap: 20px; /* espaço entre os vídeos */
-    flex-wrap: wrap; /* quebra linha em telas menores */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .videos-container iframe{
@@ -148,7 +149,7 @@ main{
     border: none;
 }
 
-/* Seção do formulário alinhada ao topo e esquerda */
+/* Seção do formulário */
 .formulario{
     display: flex;
     flex-direction: column;
@@ -158,7 +159,7 @@ main{
     min-height: 50vh;
     padding: 40px;
     gap: 20px;
-    overflow-x: auto; /* 🔥 cria scroll ao invés de quebrar */
+    overflow-x: auto;
 }
 
 
@@ -169,7 +170,7 @@ main{
     width: 100%;
 }
 
-/* Container para colocar form e resultado lado a lado */
+/* Container para colocar form e resultado */
 .layout-imc {
     display: flex;
     gap: 30px;
@@ -216,7 +217,6 @@ main{
     transform: scale(1.05);
 }
 
-/* balão de resultado agora ao lado */
 .resultado{
     padding: 7px 20px;
     border-radius: 10px;
