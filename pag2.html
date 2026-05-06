@@ -29,36 +29,47 @@
             <h2 style="color: black;">Calcule seu IMC (Indice de Masa Corporal)</h2>
         
             <div class="layout-imc">
-        
-                <!-- FORM -->
-                <div class="bloco-form">
-                    <form id="imcForm" class="form-grid">
-                        <input type="text" id="nome" placeholder="Nome" required>
-                        <input type="number" id="altura" placeholder="Altura (m)" step="0.01" required>
-                        <button type="submit" class="btn-confirmar">Confirmar</button>
-        
-                        <input type="text" id="cpf" placeholder="CPF" required>
-                        <input type="number" id="peso" placeholder="Peso (kg)" step="0.1" required>
-                        <button type="button" id="btnAtualizar" class="btn-atualizar">Resetar</button>
-                    </form>
+
+                <!-- LADO ESQUERDO -->
+                <div class="coluna-esquerda">
+                    <div class="bloco-form">
+                        <form id="imcForm" class="form-grid">
+                            <input type="text" id="nome" placeholder="Nome" required>
+                            <input type="number" id="altura" placeholder="Altura (m)" step="0.01" required>
+                            <button type="submit" class="btn-confirmar">Confirmar</button>
+            
+                            <input type="text" id="cpf" placeholder="CPF" required>
+                            <input type="number" id="peso" placeholder="Peso (kg)" step="0.1" required>
+                            <button type="button" id="btnAtualizar" class="btn-atualizar">Resetar</button>
+                        </form>
+                    </div>
+            
+                    <!-- AGORA FICA EMBAIXO -->
+                    <div id="resultado" class="resultado"></div>
                 </div>
-        
-                <!-- RESULTADO -->
-                <div id="resultado" class="resultado"></div>
-        
-                <!-- OPÇÕES -->
-                <div id="opcoes" class="opcoes">
-                    <h3>Objetivo</h3>
-        
-                    <button>Perder peso</button>
-                    <button>Ganhar peso</button>
-                    <button>Definir corpo</button>
-                    <button>Ganhar músculos</button>
-                </div>
-        
+            
+                <div class="lado-direito">
+
+                    <!-- OBJETIVO -->
+                    <div id="opcoes" class="opcoes">
+                        <h3>Objetivo</h3>
+                
+                        <button>Perder peso</button>
+                        <button>Ganhar peso</button>
+                        <button>Definir corpo</button>
+                        <button>Ganhar músculos</button>
+                    </div>
+                
+                    <!-- TABELA -->
+                    
+                     <img class="tabela-imc" src="imagens/ChatGPT Image 21 de abr. de 2026, 14_28_39.png" alt="Tabela IMC">
+                                   
+                </div>                            
             </div>
         </section>
     </main>
+
+    <h1>testando para ver como vai ficar este texto</h1>
 
     <footer class="footer">
         <p>© 2026 Fomento Corporal</p>
@@ -120,7 +131,10 @@
         
             // Mostrar opções
             let opcoes = document.getElementById("opcoes");
-            opcoes.style.display = "block";
+            opcoes.style.display = "flex";
+
+            // Mostrar tabela IMC
+            document.querySelector(".tabela-imc").style.display = "flex";
         
             // Destacar botão conforme IMC
             let botoes = document.querySelectorAll(".opcoes button");
@@ -149,6 +163,9 @@
         
             // Esconde opções
             document.getElementById("opcoes").style.display = "none";
+
+            // ✅ NOVO - Esconde tabela IMC
+            document.querySelector(".tabela-imc").style.display = "none";
         
             // Foco no nome
             document.getElementById("nome").focus();
