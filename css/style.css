@@ -40,6 +40,10 @@ body {
     cursor: pointer;
 }
 
+.titulo-site{
+    white-space: pre-line;
+}
+
 /* texto central */
 .titulo {
     text-align: center;
@@ -61,6 +65,8 @@ body {
     border-radius: 8px;
     font-weight: bold;
     transition: 0.3s;
+    white-space: pre-line;
+    
 }
 
 .btn:hover{
