@@ -306,3 +306,41 @@ main{
     vertical-align: top;
 }
 
+/* ------------------------------------*/
+
+.campo-renda{
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin-top: 15px;
+}
+
+.campo-renda input{
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 5px;
+}
+
+.campo-renda button{
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: aquamarine;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}

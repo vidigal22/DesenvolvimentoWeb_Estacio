@@ -114,3 +114,19 @@ const savedLanguage = localStorage.getItem("language") || "pt";
 languageSelect.value = savedLanguage;
 
 changeLanguage(savedLanguage);
+
+/* ------------------------------------*/
+
+const botoesObjetivo =
+document.querySelectorAll(".opcoes button");
+
+const campoRenda =
+document.getElementById("campoRenda");
+
+botoesObjetivo.forEach(botao => {
+
+    botao.addEventListener("click", () => {
+
+        campoRenda.style.display = "flex";
+    });
+});
