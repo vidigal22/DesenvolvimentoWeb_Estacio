@@ -127,6 +127,42 @@ botoesObjetivo.forEach(botao => {
 
     botao.addEventListener("click", () => {
 
+        objetivoSelecionado = botao.textContent;
+
         campoRenda.style.display = "flex";
     });
+});
+
+/* ------------------------------------*/
+
+let objetivoSelecionado = "";
+
+document
+.getElementById("confirmarRenda")
+.addEventListener("click", () => {
+
+    const renda =
+    Number(document.getElementById("renda").value);
+
+    if(!renda){
+
+        alert("Informe uma renda válida!");
+
+        return;
+    }
+
+    const tipoDieta =
+        renda <= 5000
+        ? "simples"
+        : "premium";
+
+    const dieta =
+        dietas[objetivoSelecionado][tipoDieta];
+
+    const dietaResultado =
+    document.getElementById("dietaResultado");
+
+    dietaResultado.style.display = "block";
+
+    dietaResultado.innerHTML = dieta;
 });

@@ -338,9 +338,84 @@ main{
 
     border-radius: 5px;
 
-    background: aquamarine;
+    background: aqua;
 
     cursor: pointer;
 
     font-weight: bold;
+}
+
+/* ------------------------------------*/
+
+.dieta-resultado{
+
+    display: none;
+
+    margin: 30px;
+
+    padding: 25px;
+
+    background: #3f3c3c;
+
+    color: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.3);
+
+    overflow-x: auto;
+}
+
+
+.tabela-dieta{
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+}
+
+.tabela-dieta th{
+
+    background: aquamarine;
+
+    color: rgb(0, 0, 0);
+
+    padding: 15px;
+
+    text-align: center;
+}
+
+.tabela-dieta td{
+
+    border: 1px solid #555;
+
+    padding: 15px;
+
+    background: #534f4f;
+
+    color: white;
+
+    vertical-align: top;
+}
+
+.tabela-dieta tr:nth-child(even) td{
+
+    background: #3a3a3a;
+}
+
+@media(max-width: 900px){
+
+    .tabela-dieta{
+
+        font-size: 14px;
+    }
+
+    .tabela-dieta th,
+    .tabela-dieta td{
+
+        padding: 10px;
+    }
 }
