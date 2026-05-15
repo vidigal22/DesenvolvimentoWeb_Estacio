@@ -370,6 +370,71 @@ const dietas = {
                     150g de peito de frango desfiado, purê de abóbora.
                 </td>
             </tr>
+        </table>
+        
+        <table class="tabela-treino">
+
+            <tr>
+                <th>Dia</th>
+                <th>Treino 1</th>
+            </tr>
+
+            <tr>
+                <td><strong>Segunda-feira</strong></td>
+
+                <td>
+                    Musculação: Peito e Tríceps + 30 min Cardio
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Terça-feira</strong></td>
+
+                <td>
+                    Musculação: Costas e Bíceps + 30 min Cardio
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quarta-feira</strong></td>
+
+                <td>
+                    Descanso Ativo (Caminhada leve) ou 45 min Cardio
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quinta-feira</strong></td>
+
+                <td>
+                    Musculação: Pernas e Ombros + 30 min Cardio
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Sexta-feira</strong></td>
+
+                <td>
+                    Musculação: Corpo Total (exercícios compostos) + 30 min Cardio
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Sabado</strong></td>
+
+                <td>
+                    45 min Cardio (HIIT ou Moderado)
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Domingo</strong></td>
+
+                <td>
+                    Descanso Total
+                </td>
+            </tr>
+
         </table>`,
 
         premium: `
@@ -454,6 +519,71 @@ const dietas = {
                 Ovos cozidos (2 unidades) com azeite de oliva.
                 </td>
             </tr>            
+        </table>
+        
+        <table class="tabela-treino">
+
+            <tr>
+                <th>Dia</th>
+                <th>Treino 1</th>
+            </tr>
+
+            <tr>
+                <td><strong>Segunda-feira</strong></td>
+
+                <td>
+                    Musculação: Peito e Tríceps (com técnicas avançadas) + 20 min HIIT
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Terça-feira</strong></td>
+
+                <td>
+                    Musculação: Costas e Bíceps (com técnicas avançadas) + 30 min Cardio Moderado
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quarta-feira</strong></td>
+
+                <td>
+                    Treino Funcional ou Natação + 30 min Cardio
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quinta-feira</strong></td>
+
+                <td>
+                    Musculação: Pernas e Ombros (com técnicas avançadas) + 20 min HIIT
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Sexta-feira</strong></td>
+
+                <td>
+                    Musculação: Corpo Total (foco em exercícios compostos) + 30 min Cardio Moderado
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Sabado</strong></td>
+
+                <td>
+                    Atividade Esportiva (tênis, beach tennis) ou 45 min Cardio
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Domingo</strong></td>
+
+                <td>
+                    Descanso Ativo (alongamento, yoga) ou Descanso Total
+                </td>
+            </tr>
+
         </table>`
     },
 
@@ -541,6 +671,71 @@ const dietas = {
                     iogurte natural com granola e 1 fruta.
                 </td>
             </tr>            
+        </table>
+        
+        <table class="tabela-treino">
+
+            <tr>
+                <th>Dia</th>
+                <th>Treino 1</th>
+            </tr>
+
+            <tr>
+                <td><strong>Segunda-feira</strong></td>
+
+                <td>
+                    <strong>A - Peito, Tríceps e Ombros:</strong> Supino reto, Supino inclinado, Desenvolvimento de ombros, Tríceps testa, Elevação lateral.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Terça-feira</strong></td>
+
+                <td>
+                    <strong>B - Costas e Bíceps:</strong> Remada curvada, Puxada alta, Levantamento terra, Rosca direta, Rosca martelo.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quarta-feira</strong></td>
+
+                <td>
+                    Descanso Ativo (Caminhada leve) ou Cardio Moderado
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quinta-feira</strong></td>
+
+                <td>
+                <strong>C - Pernas e Panturrilhas:</strong> Agachamento livre, Leg press, Cadeira extensora, Mesa flexora, Panturrilha em pé.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Sexta-feira</strong></td>
+
+                <td>
+                    Repete Treino A ou B (alternar semanalmente)
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Sabado</strong></td>
+
+                <td>
+                    Cardio Moderado ou Descanso
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Domingo</strong></td>
+
+                <td>
+                    Descanso Total
+                </td>
+            </tr>
+
         </table>`,
 
         premium: `
@@ -636,7 +831,73 @@ const dietas = {
                 <td>
                     Ovos cozidos (2 unidades) com azeite de oliva e sal rosa.
                 </td>
-            </tr>            
+            </tr>   
+
+        </table>
+        
+        <table class="tabela-treino">
+
+            <tr>
+                <th>Dia</th>
+                <th>Treino 1</th>
+            </tr>
+
+            <tr>
+                <td><strong>Segunda-feira</strong></td>
+
+                <td>
+                    <strong>A - Peito e Tríceps:</strong> Supino reto com barra, Supino inclinado com halteres, Crucifixo, Tríceps pulley, Tríceps francês.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Terça-feira</strong></td>
+
+                <td>
+                    <strong>B - Costas e Bíceps:</strong> Barra fixa (ou puxada alta), Remada curvada, Remada unilateral, Rosca direta, Rosca alternada.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quarta-feira</strong></td>
+
+                <td>
+                    Descanso Ativo (mobilidade, alongamento) ou Cardio Leve
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quinta-feira</strong></td>
+
+                <td>
+                <strong>C - Pernas (Quadríceps e Panturrilhas):</strong> Agachamento livre, Leg press, Cadeira extensora, Avanço, Panturrilha em pé e sentado.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Sexta-feira</strong></td>
+
+                <td>
+                    <strong>Ombros e pernas (Posterior e Gluteos):</strong> Desenvolvimento de ombros, Elevação lateral, Elevação frontal, Mesa flexora, Stiff, Elevação pélvica.
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Sabado</strong></td>
+
+                <td>
+                    Cardio Moderado ou Descanso
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Domingo</strong></td>
+
+                <td>
+                    Descanso Total
+                </td>
+            </tr>
+
         </table>`
     }
 };

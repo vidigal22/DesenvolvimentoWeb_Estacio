@@ -225,7 +225,7 @@ main{
 
 .btn-confirmar:hover,
 .btn-atualizar:hover{
-    background: #00d4aa;
+    background: aqua;
     transform: scale(1.05);
 }
 
@@ -247,9 +247,9 @@ main{
     padding: 10px;
     border-radius: 10px;
 
-    width: 260px;
-    min-width: 260px;
-    max-width: 260px;
+    width: 190px;
+    min-width: 190px;
+    max-width: 190px;
     
     flex: 0 0 260px;
     
@@ -259,7 +259,7 @@ main{
     /* 🔥 NOVO */
     flex-direction: column;
     align-items: center; /* centraliza horizontal */
-    gap: 12px; /* espaço entre elementos */
+    gap: 10px; /* espaço entre elementos */
 }
 
 .opcoes h3{
@@ -268,14 +268,13 @@ main{
     font-size: 20px;
 }
 
+
 .opcoes button{
-    width: 100%;
+    background: aqua;
+    width: 150px;
     padding: 12px; /* 🔥 maior */
     font-size: 15px; /* 🔥 texto maior */
-    border: none;
     border-radius: 8px;
-    background: aquamarine;
-    cursor: pointer;
     font-weight: bold;
     transition: 0.3s;
     margin: 1px 0;
@@ -285,7 +284,7 @@ main{
 }
 
 .opcoes button:hover{
-    background: #00d4aa;
+    background: aqua;
     transform: scale(1.1);
     cursor: pointer;
 }
@@ -345,6 +344,11 @@ main{
     font-weight: bold;
 }
 
+.campo-renda button:hover{
+    background: aquamarine;
+    transform: scale(1.01);
+}
+
 /* ------------------------------------*/
 
 .dieta-resultado{
@@ -368,7 +372,8 @@ main{
 }
 
 
-.tabela-dieta{
+.tabela-dieta,
+.tabela-treino{
 
     width: 100%;
 
@@ -388,7 +393,20 @@ main{
     text-align: center;
 }
 
-.tabela-dieta td{
+.tabela-treino th{
+
+    background: aqua;
+
+    color: rgb(0, 0, 0);
+
+    padding: 15px;
+
+    text-align: center;
+}
+
+
+.tabela-dieta td,
+.tabela-treino td{
 
     border: 1px solid #555;
 
@@ -401,20 +419,24 @@ main{
     vertical-align: top;
 }
 
-.tabela-dieta tr:nth-child(even) td{
+.tabela-dieta tr:nth-child(even) td,
+.tabela-treino tr:nth-child(even) td{
 
     background: #3a3a3a;
 }
 
 @media(max-width: 900px){
 
-    .tabela-dieta{
+    .tabela-dieta,
+    .tabela-treino{
 
         font-size: 14px;
     }
 
     .tabela-dieta th,
-    .tabela-dieta td{
+    .tabela-dieta td,
+    .tabela-treino th,
+    .tabela-treino td{
 
         padding: 10px;
     }

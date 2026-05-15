@@ -8,8 +8,18 @@ if(imcForm){
         e.preventDefault();
 
         let nome = document.getElementById("nome").value;
-        let peso = parseFloat(document.getElementById("peso").value);
-        let altura = parseFloat(document.getElementById("altura").value);
+        let peso = parseFloat(
+            document.getElementById("peso")
+            .value
+            .replace(".", "")
+            .replace(",", ".")
+            );
+        let altura = parseFloat(
+            document.getElementById("altura")
+            .value
+            .replace(".", "")
+            .replace(",", ".")
+            );
         let cpf = document.getElementById("cpf").value;
 
         if (!peso || !altura || altura <= 0) {
@@ -142,7 +152,12 @@ document
 .addEventListener("click", () => {
 
     const renda =
-    Number(document.getElementById("renda").value);
+    parseFloat(
+        document.getElementById("renda")
+        .value
+        .replace(/\./g, "")
+        .replace(",", ".")
+        )
 
     if(!renda){
 
@@ -166,3 +181,36 @@ document
 
     dietaResultado.innerHTML = dieta;
 });
+
+
+function aplicarMascaraDecimal(idCampo){
+
+    const campo = document.getElementById(idCampo);
+
+    campo.addEventListener("input", () => {
+
+        let valor = campo.value.replace(/\D/g, "");
+
+        if(valor === ""){
+
+            campo.value = "";
+
+            return;
+        }
+
+        valor = (parseInt(valor) / 100)
+        .toLocaleString("pt-BR", {
+
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+        campo.value = valor;
+    });
+}
+
+aplicarMascaraDecimal("altura");
+
+aplicarMascaraDecimal("peso");
+
+aplicarMascaraDecimal("renda");
