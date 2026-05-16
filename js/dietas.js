@@ -63,6 +63,71 @@ const dietas = {
                     Sopa de legumes com frango desfiado.
                 </td>
             </tr>            
+        </table>
+        
+        <table class="tabela-treino">
+
+            <tr>
+                <th>Dia</th>
+                <th>Treino</th>
+            </tr>
+
+            <tr>
+                <td><strong>Segunda-feira</strong></td>
+
+                <td>
+                    <strong>A - Peito e Tríceps:</strong> Supino reto com barra, Supino inclinado com halteres, Crucifixo, Tríceps pulley, Tríceps francês.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Terça-feira</strong></td>
+
+                <td>
+                    <strong>B - Costas e Bíceps:</strong> Barra fixa (ou puxada alta), Remada curvada, Remada unilateral, Rosca direta, Rosca alternada.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quarta-feira</strong></td>
+
+                <td>
+                    Descanso Ativo (mobilidade, alongamento) ou Cardio Leve
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quinta-feira</strong></td>
+
+                <td>
+                <strong>C - Pernas (Quadríceps e Panturrilhas):</strong> Agachamento livre, Leg press, Cadeira extensora, Avanço, Panturrilha em pé e sentado.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Sexta-feira</strong></td>
+
+                <td>
+                    <strong>Ombros e pernas (Posterior e Gluteos):</strong> Desenvolvimento de ombros, Elevação lateral, Elevação frontal, Mesa flexora, Stiff, Elevação pélvica.
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Sabado</strong></td>
+
+                <td>
+                    Cardio Moderado ou Descanso
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Domingo</strong></td>
+
+                <td>
+                    Descanso Total
+                </td>
+            </tr>
+
         </table>`,
 
         premium: `
@@ -124,6 +189,71 @@ const dietas = {
                     Carpaccio de carne com alcaparras, parmesão curado e salada de rúcula.
                 </td>
             </tr>            
+        </table>
+        
+        <table class="tabela-treino">
+
+            <tr>
+                <th>Dia</th>
+                <th>Treino</th>
+            </tr>
+
+            <tr>
+                <td><strong>Segunda-feira</strong></td>
+
+                <td>
+                    <strong>A - Peito e Tríceps:</strong> Supino reto com barra, Supino inclinado com halteres, Crucifixo, Tríceps pulley, Tríceps francês.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Terça-feira</strong></td>
+
+                <td>
+                    <strong>B - Costas e Bíceps:</strong> Barra fixa (ou puxada alta), Remada curvada, Remada unilateral, Rosca direta, Rosca alternada.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quarta-feira</strong></td>
+
+                <td>
+                    Descanso Ativo (mobilidade, alongamento) ou Cardio Leve
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quinta-feira</strong></td>
+
+                <td>
+                <strong>C - Pernas (Quadríceps e Panturrilhas):</strong> Agachamento livre, Leg press, Cadeira extensora, Avanço, Panturrilha em pé e sentado.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Sexta-feira</strong></td>
+
+                <td>
+                    <strong>Ombros e pernas (Posterior e Gluteos):</strong> Desenvolvimento de ombros, Elevação lateral, Elevação frontal, Mesa flexora, Stiff, Elevação pélvica.
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Sabado</strong></td>
+
+                <td>
+                    Cardio Moderado ou Descanso
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Domingo</strong></td>
+
+                <td>
+                    Descanso Total
+                </td>
+            </tr>
+
         </table>`
     },
 
@@ -211,6 +341,71 @@ const dietas = {
                     1 iogurte natural com granola.
                 </td>
             </tr>
+        </table>
+        
+        <table class="tabela-treino">
+
+            <tr>
+                <th>Dia</th>
+                <th>Treino</th>
+            </tr>
+
+            <tr>
+                <td><strong>Segunda-feira</strong></td>
+
+                <td>
+                    <strong>A - Peito e Tríceps:</strong> Supino reto com barra, Supino inclinado com halteres, Crucifixo, Tríceps pulley, Tríceps francês.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Terça-feira</strong></td>
+
+                <td>
+                    <strong>B - Costas e Bíceps:</strong> Barra fixa (ou puxada alta), Remada curvada, Remada unilateral, Rosca direta, Rosca alternada.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quarta-feira</strong></td>
+
+                <td>
+                    Descanso Ativo (mobilidade, alongamento) ou Cardio Leve
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quinta-feira</strong></td>
+
+                <td>
+                <strong>C - Pernas (Quadríceps e Panturrilhas):</strong> Agachamento livre, Leg press, Cadeira extensora, Avanço, Panturrilha em pé e sentado.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Sexta-feira</strong></td>
+
+                <td>
+                    <strong>Ombros e pernas (Posterior e Gluteos):</strong> Desenvolvimento de ombros, Elevação lateral, Elevação frontal, Mesa flexora, Stiff, Elevação pélvica.
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Sabado</strong></td>
+
+                <td>
+                    Cardio Moderado ou Descanso
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Domingo</strong></td>
+
+                <td>
+                    Descanso Total
+                </td>
+            </tr>
+
         </table>`,
 
         premium: `
@@ -295,6 +490,71 @@ const dietas = {
                     Ovos cozidos (2 unidades) com azeite e sal rosa.
                 </td>
             </tr>            
+        </table>
+        
+        <table class="tabela-treino">
+
+            <tr>
+                <th>Dia</th>
+                <th>Treino</th>
+            </tr>
+
+            <tr>
+                <td><strong>Segunda-feira</strong></td>
+
+                <td>
+                    <strong>A - Peito e Tríceps:</strong> Supino reto com barra, Supino inclinado com halteres, Crucifixo, Tríceps pulley, Tríceps francês.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Terça-feira</strong></td>
+
+                <td>
+                    <strong>B - Costas e Bíceps:</strong> Barra fixa (ou puxada alta), Remada curvada, Remada unilateral, Rosca direta, Rosca alternada.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quarta-feira</strong></td>
+
+                <td>
+                    Descanso Ativo (mobilidade, alongamento) ou Cardio Leve
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Quinta-feira</strong></td>
+
+                <td>
+                <strong>C - Pernas (Quadríceps e Panturrilhas):</strong> Agachamento livre, Leg press, Cadeira extensora, Avanço, Panturrilha em pé e sentado.
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Sexta-feira</strong></td>
+
+                <td>
+                    <strong>Ombros e pernas (Posterior e Gluteos):</strong> Desenvolvimento de ombros, Elevação lateral, Elevação frontal, Mesa flexora, Stiff, Elevação pélvica.
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Sabado</strong></td>
+
+                <td>
+                    Cardio Moderado ou Descanso
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>Domingo</strong></td>
+
+                <td>
+                    Descanso Total
+                </td>
+            </tr>
+
         </table>`
     },
 
@@ -376,7 +636,7 @@ const dietas = {
 
             <tr>
                 <th>Dia</th>
-                <th>Treino 1</th>
+                <th>Treino</th>
             </tr>
 
             <tr>
@@ -525,7 +785,7 @@ const dietas = {
 
             <tr>
                 <th>Dia</th>
-                <th>Treino 1</th>
+                <th>Treino</th>
             </tr>
 
             <tr>
@@ -677,7 +937,7 @@ const dietas = {
 
             <tr>
                 <th>Dia</th>
-                <th>Treino 1</th>
+                <th>Treino</th>
             </tr>
 
             <tr>
@@ -839,7 +1099,7 @@ const dietas = {
 
             <tr>
                 <th>Dia</th>
-                <th>Treino 1</th>
+                <th>Treino</th>
             </tr>
 
             <tr>
