@@ -8,66 +8,104 @@ if(imcForm){
         e.preventDefault();
 
         let nome = document.getElementById("nome").value;
+
         let peso = parseFloat(
             document.getElementById("peso")
             .value
             .replace(".", "")
             .replace(",", ".")
-            );
+        );
+
         let altura = parseFloat(
             document.getElementById("altura")
             .value
             .replace(".", "")
             .replace(",", ".")
-            );
+        );
+
         let cpf = document.getElementById("cpf").value;
 
         if (!peso || !altura || altura <= 0) {
+
             alert("Preencha peso e altura corretamente!");
+
             return;
         }
 
-        let imc = peso / (altura * altura);
-        imc = imc.toFixed(2);
+        let resultado =
+        document.getElementById("resultado");
 
-        let classificacao = "";
-        let resultado = document.getElementById("resultado");
+        fetch("php/calcular_imc.php", {
 
-        resultado.style.background = "#333";
+            method: "POST",
 
-        if(imc < 18.5){
-            classificacao = "Abaixo do peso";
-        } else if(imc < 25){
-            classificacao = "Peso normal";
-        } else if(imc < 30){
-            classificacao = "Sobrepeso";
-        } else {
-            classificacao = "Obesidade";
-        }
+            headers: {
+                "Content-Type": "application/json"
+            },
 
-        resultado.style.display = "block";
+            body: JSON.stringify({
 
-        resultado.innerHTML = `
-        Cadastro: <strong>${cpf}</strong><br>
-        <strong>${nome}</strong>, seu IMC é <strong>${imc}</strong><br>
-        Classificação: <strong>${classificacao}</strong>
-        `;
+                acao: "imc",
 
-        let opcoes = document.getElementById("opcoes");
-        opcoes.style.display = "flex";
+                nome: nome,
+                peso: peso,
+                altura: altura,
+                cpf: cpf
+            })
+        })
 
-        document.querySelector(".tabela-imc").style.display = "flex";
+        .then(resposta => resposta.json())
 
-        let botoes = document.querySelectorAll(".opcoes button");
+        .then(dados => {
 
-        botoes.forEach(btn => btn.style.background = "aquamarine");
+            if(dados.erro){
 
-        if(imc < 18.5){
-            botoes[1].style.background = "#3498db";
-        } else if(imc >= 25){
-            botoes[0].style.background = "#e74c3c";
-        }
+                alert(dados.erro);
 
+                return;
+            }
+
+            resultado.style.display = "block";
+
+            resultado.innerHTML = `
+                Cadastro: <strong>${dados.cpf}</strong><br>
+                <strong>${dados.nome}</strong>, seu IMC é <strong>${dados.imc}</strong><br>
+                Classificação: <strong>${dados.classificacao}</strong>
+            `;
+
+            let opcoes =
+            document.getElementById("opcoes");
+
+            opcoes.style.display = "flex";
+
+            document.querySelector(".tabela-imc")
+            .style.display = "flex";
+
+            let botoes =
+            document.querySelectorAll(".opcoes button");
+
+            botoes.forEach(btn =>
+                btn.style.background = "aquamarine"
+            );
+
+            if(dados.imc < 18.5){
+
+                botoes[1].style.background =
+                "#3498db";
+
+            } else if(dados.imc >= 25){
+
+                botoes[0].style.background =
+                "#e74c3c";
+            }
+        })
+
+        .catch(erro => {
+
+            console.error(erro);
+
+            alert("Erro ao conectar com o servidor.");
+        });
     });
 }
 
@@ -166,20 +204,56 @@ document
         return;
     }
 
-    const tipoDieta =
-        renda <= 5000
-        ? "simples"
-        : "premium";
+    fetch("php/calcular_imc.php", {
 
-    const dieta =
-        dietas[objetivoSelecionado][tipoDieta];
+        method: "POST",
+    
+        headers: {
+            "Content-Type": "application/json"
+        },
+    
+        body: JSON.stringify({
 
-    const dietaResultado =
-    document.getElementById("dietaResultado");
-
-    dietaResultado.style.display = "block";
-
-    dietaResultado.innerHTML = dieta;
+            acao: "dieta",
+    
+            renda: renda,
+            objetivo: objetivoSelecionado
+        })
+    })
+    
+    .then(resposta => {
+    
+        if(!resposta.ok){
+    
+            throw new Error("Erro no servidor");
+        }
+    
+        return resposta.json();
+    })
+    
+    .then(dados => {
+    
+        if(dados.erro){
+    
+            alert(dados.erro);
+    
+            return;
+        }
+    
+        const dietaResultado =
+        document.getElementById("dietaResultado");
+    
+        dietaResultado.style.display = "block";
+    
+        dietaResultado.innerHTML = dados.dieta;
+    })
+    
+    .catch(erro => {
+    
+        console.error(erro);
+    
+        alert("Erro ao buscar dieta.");
+    });
 });
 
 
