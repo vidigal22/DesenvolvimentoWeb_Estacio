@@ -47,6 +47,13 @@ if(imcForm){
 
                 acao: "imc",
 
+                renda: parseFloat(
+                    document.getElementById("renda")
+                    .value
+                    .replace(/\./g, "")
+                    .replace(",", ".")
+                ),
+
                 nome: nome,
                 peso: peso,
                 altura: altura,
