@@ -1,25 +1,22 @@
 <?php
 
-$host = "localhost";
-$usuario = "root";
-$senha = getenv('db_pass');
+require __DIR__ . '/vendor/autoload.php';
 
-/* -------------------------------- */
-/* CONEXÃO MYSQL */
-/* -------------------------------- */
-
-$conn = new mysqli(
-
-    $host,
-    $usuario,
-    $senha
+$dotenv =
+Dotenv\Dotenv::createImmutable(
+    __DIR__
 );
 
-if($conn->connect_error){
+$dotenv->load();
 
-    die("Erro: " .
-    $conn->connect_error);
-}
+$host =
+$_ENV["DB_HOST"];
+
+$usuario =
+$_ENV["DB_USER"];
+
+$senha =
+$_ENV["DB_PASS"];
 
 /* -------------------------------- */
 /* CRIA BANCO */

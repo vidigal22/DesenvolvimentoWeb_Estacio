@@ -28,7 +28,7 @@ if(imcForm){
 
         let resultado = document.getElementById("resultado");
 
-        fetch("php/calcular_imc.php", {
+        fetch("../php/calcular_imc.php", {
 
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -149,7 +149,7 @@ document.getElementById("confirmarRenda").addEventListener("click", () => {
         return;
     }
 
-    fetch("php/calcular_imc.php", {
+    fetch("../php/calcular_imc.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
