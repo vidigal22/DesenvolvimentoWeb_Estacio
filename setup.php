@@ -64,32 +64,6 @@ $conn->query("
     )
 ");
 
-/* -------------------------------- */
-/* TABELA POSTS                     */
-/* -------------------------------- */
-$conn->query("
-    CREATE TABLE IF NOT EXISTS posts (
-        id            INT AUTO_INCREMENT PRIMARY KEY,
-        usuario_id    INT,
-        conteudo      TEXT,
-        data_postagem TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
-    )
-");
 
-/* -------------------------------- */
-/* TABELA COMENTÁRIOS               */
-/* -------------------------------- */
-$conn->query("
-    CREATE TABLE IF NOT EXISTS comentarios (
-        id              INT AUTO_INCREMENT PRIMARY KEY,
-        post_id         INT,
-        usuario_id      INT,
-        comentario      TEXT,
-        data_comentario TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (post_id)    REFERENCES posts(id),
-        FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
-    )
-");
 
 echo "Banco e tabelas criados com sucesso!";
