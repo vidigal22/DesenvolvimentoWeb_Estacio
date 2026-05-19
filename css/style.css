@@ -9,6 +9,7 @@
 
 
 body {
+    
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -90,7 +91,35 @@ main{
     justify-content: space-between;
     padding: 20px;
 }
+/*-----------------------------------*/
+.area-botoes{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 60px 0;
+    width: 100%;
+}
 
+.botao-link{
+    text-decoration: none;
+    background: linear-gradient(135deg,#00c9a7,#00e4b3);
+    color: white;
+    padding: 16px 40px;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px
+    rgba(0,0,0,0.2);
+}
+
+.botao-link:hover{
+    transform: translateY(-4px);
+    background: linear-gradient(135deg,#00b894,#00d6a3);
+    box-shadow: 0 8px 18px
+    rgba(0,0,0,0.3);
+}
+/*-----------------------------------*/
 .video h1{
     display: block; 
     text-align: center;

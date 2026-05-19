@@ -47,6 +47,33 @@
     white-space: pre-line;
 }
 
+.avatar{
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    border: 3px solid aquamarine;
+
+    flex-shrink: 0;
+}
+
+.avatar-img{
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/*----------------------------------------*/
 .btn {
     position: absolute;
     right: 20px;
@@ -572,3 +599,5 @@
 }
 
 .toast.show { opacity: 1; transform: translateY(0); }
+
+

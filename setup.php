@@ -2,129 +2,94 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$dotenv =
-Dotenv\Dotenv::createImmutable(
-    __DIR__
-);
-
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$host =
-$_ENV["DB_HOST"];
-
-$usuario =
-$_ENV["DB_USER"];
-
-$senha =
-$_ENV["DB_PASS"];
+$host    = $_ENV["DB_HOST"];
+$usuario = $_ENV["DB_USER"];
+$senha   = $_ENV["DB_PASS"];
 
 /* -------------------------------- */
-/* CONEXÃO MYSQL */
+/* CONEXÃO MYSQL                    */
 /* -------------------------------- */
+$conn = new mysqli($host, $usuario, $senha);
 
-$conn = new mysqli(
-
-    $host,
-    $usuario,
-    $senha
-);
-
-if($conn->connect_error){
-
-    die(
-        "Erro: " .
-        $conn->connect_error
-    );
+if ($conn->connect_error) {
+    die("Erro: " . $conn->connect_error);
 }
 
 /* -------------------------------- */
-/* CRIA BANCO */
+/* CRIA E USA O BANCO               */
 /* -------------------------------- */
-
-$sql =
-"CREATE DATABASE IF NOT EXISTS
-fomento_corporal";
-
-$conn->query($sql);
+$conn->query("CREATE DATABASE IF NOT EXISTS fomento_corporal");
+$conn->select_db("fomento_corporal");
 
 /* -------------------------------- */
-/* USA O BANCO */
+/* TABELA USUÁRIOS                  */
 /* -------------------------------- */
-
-$conn->select_db(
-    "fomento_corporal"
-);
-
-/* -------------------------------- */
-/* TABELA USUÁRIOS */
-/* -------------------------------- */
-
-$sql =
-"CREATE TABLE IF NOT EXISTS usuarios(
-
-    id INT AUTO_INCREMENT
-    PRIMARY KEY,
-
-    nome VARCHAR(100),
-
-    cpf VARCHAR(20)
-    UNIQUE,
-
-    data_registro TIMESTAMP
-    DEFAULT CURRENT_TIMESTAMP
-)";
-
-$conn->query($sql);
+$conn->query("
+    CREATE TABLE IF NOT EXISTS usuarios (
+        id            INT AUTO_INCREMENT PRIMARY KEY,
+        nome          VARCHAR(100),
+        cpf           VARCHAR(20) UNIQUE,
+        data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        foto_perfil   VARCHAR(255)
+    )
+");
 
 /* -------------------------------- */
-/* TABELA HISTÓRICO SAÚDE */
+/* TABELA HISTÓRICO SAÚDE           */
 /* -------------------------------- */
-
-$sql =
-"CREATE TABLE IF NOT EXISTS
-historico_saude(
-
-    id INT AUTO_INCREMENT
-    PRIMARY KEY,
-
-    usuario_id INT,
-
-    altura DECIMAL(5,2),
-
-    peso DECIMAL(5,2),
-
-    data_registro TIMESTAMP
-    DEFAULT CURRENT_TIMESTAMP,
-
-    FOREIGN KEY (usuario_id)
-    REFERENCES usuarios(id)
-)";
-
-$conn->query($sql);
+$conn->query("
+    CREATE TABLE IF NOT EXISTS historico_saude (
+        id            INT AUTO_INCREMENT PRIMARY KEY,
+        usuario_id    INT,
+        altura        DECIMAL(5,2),
+        peso          DECIMAL(5,2),
+        data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+    )
+");
 
 /* -------------------------------- */
-/* TABELA HISTÓRICO RENDA */
+/* TABELA HISTÓRICO RENDA           */
 /* -------------------------------- */
+$conn->query("
+    CREATE TABLE IF NOT EXISTS historico_renda (
+        id            INT AUTO_INCREMENT PRIMARY KEY,
+        usuario_id    INT,
+        renda         DECIMAL(10,2),
+        data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+    )
+");
 
-$sql =
-"CREATE TABLE IF NOT EXISTS
-historico_renda(
+/* -------------------------------- */
+/* TABELA POSTS                     */
+/* -------------------------------- */
+$conn->query("
+    CREATE TABLE IF NOT EXISTS posts (
+        id            INT AUTO_INCREMENT PRIMARY KEY,
+        usuario_id    INT,
+        conteudo      TEXT,
+        data_postagem TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+    )
+");
 
-    id INT AUTO_INCREMENT
-    PRIMARY KEY,
+/* -------------------------------- */
+/* TABELA COMENTÁRIOS               */
+/* -------------------------------- */
+$conn->query("
+    CREATE TABLE IF NOT EXISTS comentarios (
+        id              INT AUTO_INCREMENT PRIMARY KEY,
+        post_id         INT,
+        usuario_id      INT,
+        comentario      TEXT,
+        data_comentario TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (post_id)    REFERENCES posts(id),
+        FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+    )
+");
 
-    usuario_id INT,
-
-    renda DECIMAL(10,2),
-
-    data_registro TIMESTAMP
-    DEFAULT CURRENT_TIMESTAMP,
-
-    FOREIGN KEY (usuario_id)
-    REFERENCES usuarios(id)
-)";
-
-$conn->query($sql);
-
-echo "Banco e tabelas criados!";
-
+echo "Banco e tabelas criados com sucesso!";
