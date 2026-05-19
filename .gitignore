@@ -10,3 +10,7 @@ pag2.html
 html/pag2.html
 imagens/
 php/conexao.php
+.env
+composer.json
+composer.lock
+/vendor
