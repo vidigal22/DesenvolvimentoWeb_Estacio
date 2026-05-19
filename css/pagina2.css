@@ -102,13 +102,10 @@ body{
     color: white;
     padding: 10px;
     border-radius: 10px;
-
     width: 190px;
     min-width: 190px;
-    max-width: 190px;
-    
-    flex: 0 0 260px;
-    
+    max-width: 190px;   
+    flex: 0 0 260px;  
     height: 220px; /* aumenta altura */
     overflow-y: auto;
     display: none;
@@ -164,39 +161,25 @@ body{
 /* ------------------------------------*/
 
 .campo-renda{
-
     display: none;
-
     flex-direction: column;
-
     gap: 10px;
-
     width: 100%;
-
     margin-top: 15px;
 }
 
 .campo-renda input{
-
     padding: 10px;
-
     border: none;
-
     border-radius: 5px;
 }
 
 .campo-renda button{
-
     padding: 10px;
-
     border: none;
-
     border-radius: 5px;
-
     background: aqua;
-
     cursor: pointer;
-
     font-weight: bold;
 }
 
@@ -207,85 +190,76 @@ body{
 
 /* ------------------------------------*/
 
-.dieta-resultado{
-
-    display: none;
-
+/*Container que agrupa tudo */
+.container-dieta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     margin: 30px;
-
-    padding: 25px;
-
-    background: #3f3c3c;
-
-    color: white;
-
-    border-radius: 15px;
-
-    box-shadow:
-        0 4px 15px rgba(0,0,0,0.3);
-
-    overflow-x: auto;
 }
 
+.dieta-resultado{
+    display: none;
+    margin: 30px;
+    padding: 25px;
+    background: #3f3c3c;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    overflow-x: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.area-botoes{
+    display: none;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    width: 100%;
+}
 
 .tabela-dieta,
 .tabela-treino{
-
     width: 100%;
-
     border-collapse: collapse;
-
     margin-top: 20px;
 }
 
 .tabela-dieta th{
-
     background: aquamarine;
-
     color: rgb(0, 0, 0);
-
     padding: 15px;
-
     text-align: center;
 }
 
 .tabela-treino th{
-
     background: aqua;
-
     color: rgb(0, 0, 0);
-
     padding: 15px;
-
     text-align: center;
 }
 
 
 .tabela-dieta td,
 .tabela-treino td{
-
     border: 1px solid #555;
-
     padding: 15px;
-
     background: #534f4f;
-
     color: white;
-
     vertical-align: top;
 }
 
 .tabela-dieta tr:nth-child(even) td,
 .tabela-treino tr:nth-child(even) td{
-
     background: #3a3a3a;
 }
 
 @media(max-width: 900px){
-
     .tabela-dieta,
     .tabela-treino{
-
         font-size: 14px;
     }
 
@@ -293,7 +267,27 @@ body{
     .tabela-dieta td,
     .tabela-treino th,
     .tabela-treino td{
-
         padding: 10px;
     }
+}
+
+
+.botao-link{
+    text-decoration: none;
+    background: linear-gradient(135deg,#00c9a7,#00e4b3);
+    color: white;
+    padding: 16px 40px;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px
+    rgba(0,0,0,0.2);
+}
+
+.botao-link:hover{
+    transform: translateY(-4px);
+    background: linear-gradient(135deg,#00b894,#00d6a3);
+    box-shadow: 0 8px 18px
+    rgba(0,0,0,0.3);
 }

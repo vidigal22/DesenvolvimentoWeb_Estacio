@@ -19,6 +19,25 @@ $senha =
 $_ENV["DB_PASS"];
 
 /* -------------------------------- */
+/* CONEXÃO MYSQL */
+/* -------------------------------- */
+
+$conn = new mysqli(
+
+    $host,
+    $usuario,
+    $senha
+);
+
+if($conn->connect_error){
+
+    die(
+        "Erro: " .
+        $conn->connect_error
+    );
+}
+
+/* -------------------------------- */
 /* CRIA BANCO */
 /* -------------------------------- */
 

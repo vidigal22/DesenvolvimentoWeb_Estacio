@@ -176,6 +176,8 @@ document.getElementById("confirmarRenda").addEventListener("click", () => {
         const dietaResultado = document.getElementById("dietaResultado");
     
         dietaResultado.style.display = "block";
+
+        document.getElementById('areaBotoes').style.display = 'flex';
     
         dietaResultado.innerHTML = dados.dieta;
     }).catch(erro => {    
@@ -248,3 +250,5 @@ function aplicarMascaraCPF(){
 }
 
 aplicarMascaraCPF();
+
+
