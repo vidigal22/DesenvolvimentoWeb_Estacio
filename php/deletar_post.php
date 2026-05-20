@@ -11,12 +11,12 @@ if (!$post_id || !$cpf) {
     exit;
 }
 
-/* Deleta comentários do post primeiro (FK) */
+/* Deleta comentários do post */
 $stmt = $conn->prepare("DELETE FROM comentarios WHERE post_id = ?");
 $stmt->bind_param("i", $post_id);
 $stmt->execute();
 
-/* Deleta o post — só se o CPF for o dono */
+/* Deleta o post */
 $stmt = $conn->prepare("
     DELETE p FROM posts p
     JOIN usuarios u ON u.id = p.usuario_id

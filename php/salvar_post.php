@@ -30,7 +30,4 @@ $stmt = $conn->prepare(
 $stmt->bind_param("is", $usuario_id, $conteudo);
 $stmt->execute();
 
-echo json_encode([
-    "sucesso"  => true,
-    "post_id"  => $conn->insert_id
-]);
+echo json_encode(["sucesso"  => true,"post_id"  => $conn->insert_id]);

@@ -12,10 +12,7 @@ if (!$cpf || !$arquivo || $arquivo["error"] !== UPLOAD_ERR_OK) {
     exit;
 }
 
-/* ── Pasta física onde o arquivo é salvo ──
-   php/ fica em /projeto/php/
-   uploads/ fica em /projeto/uploads/
-   então sobe um nível com ../ */
+/* ── Pasta física onde o arquivo é salvo ── */
 $pastaFisica = __DIR__ . "/../uploads/";
 
 /* Cria a pasta se não existir */
@@ -34,11 +31,10 @@ if (!move_uploaded_file($arquivo["tmp_name"], $caminhoFisico)) {
     exit;
 }
 
-/* ── URL acessível pelo browser ──
-   /uploads/foto_xxx.jpg  (relativo à raiz do site) */
+/* ── URL acessível pelo browser ── */
 $urlPublica = "/uploads/" . $nomeArquivo;
 
-/* Salva a URL pública no banco (não o caminho físico) */
+/* Salva a URL pública no banco */
 $sql  = "UPDATE usuarios SET foto_perfil = ? WHERE cpf = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ss", $urlPublica, $cpf);
@@ -50,7 +46,4 @@ if ($stmt->affected_rows === 0) {
     exit;
 }
 
-echo json_encode([
-    "mensagem" => "Foto salva!",
-    "caminho"  => $urlPublica
-]);
+echo json_encode(["mensagem" => "Foto salva!", "caminho"  => $urlPublica]);

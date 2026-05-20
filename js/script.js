@@ -29,7 +29,6 @@ if(imcForm){
         let resultado = document.getElementById("resultado");
 
         fetch("../php/calcular_imc.php", {
-
             method: "POST",
             headers: {"Content-Type": "application/json"},
             
@@ -73,8 +72,6 @@ if(imcForm){
     });
 }
 
-
-
 // Função para o botão Atualizar (reset)
 const btnAtualizar = document.getElementById("btnAtualizar");
 
@@ -95,10 +92,11 @@ if(btnAtualizar){
     });
 }
 
+/* Idioma da pagina */
 const languageSelect = document.getElementById("language");
 
 function changeLanguage(language) {
-    // pega todos os elementos com data-lang
+    // Pega todos os elementos com data-lang
     const elements = document.querySelectorAll("[data-lang]");
 
     elements.forEach(element => {
@@ -107,24 +105,23 @@ function changeLanguage(language) {
         element.textContent = translations[language][key];
     });
 
-    // salva idioma escolhido
+    // Salva idioma escolhido
     localStorage.setItem("language", language);
 }
 
-// troca idioma ao mudar select
+// Troca idioma ao mudar select
 languageSelect.addEventListener("change", () => {
     changeLanguage(languageSelect.value);
 });
 
-// idioma salvo
+// Idioma salvo
 const savedLanguage = localStorage.getItem("language") || "pt";
 
 languageSelect.value = savedLanguage;
 
 changeLanguage(savedLanguage);
 
-/* ------------------------------------*/
-
+/* Escolha de objetico*/
 const botoesObjetivo = document.querySelectorAll(".opcoes button");
 const campoRenda = document.getElementById("campoRenda");
 
@@ -136,7 +133,7 @@ botoesObjetivo.forEach(botao => {
     });
 });
 
-/* ------------------------------------*/
+/* Renda Mensal*/
 
 let objetivoSelecionado = "";
 
@@ -188,7 +185,7 @@ document.getElementById("confirmarRenda").addEventListener("click", () => {
     });
 });
 
-
+/* Mascara Decimal */
 function aplicarMascaraDecimal(idCampo){
     const campo = document.getElementById(idCampo);
 

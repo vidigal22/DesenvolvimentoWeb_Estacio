@@ -20,16 +20,10 @@ $resultado = $stmt->get_result();
 $usuario   = $resultado->fetch_assoc();
 
 if ($usuario && $usuario["foto_perfil"]) {
-
     /* Retorna a URL pública que foi salva no banco */
-    echo json_encode([
-        "foto_perfil" => $usuario["foto_perfil"]
-    ]);
+    echo json_encode(["foto_perfil" => $usuario["foto_perfil"]]);
 
 } else {
-
     /* Sem foto cadastrada — frontend mantém a imagem padrão */
-    echo json_encode([
-        "foto_perfil" => null
-    ]);
+    echo json_encode(["foto_perfil" => null]);
 }

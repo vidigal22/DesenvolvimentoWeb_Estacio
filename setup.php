@@ -9,24 +9,21 @@ $host    = $_ENV["DB_HOST"];
 $usuario = $_ENV["DB_USER"];
 $senha   = $_ENV["DB_PASS"];
 
-/* -------------------------------- */
-/* CONEXÃO MYSQL                    */
-/* -------------------------------- */
+
+/* CONEXÃO MYSQL */
 $conn = new mysqli($host, $usuario, $senha);
 
 if ($conn->connect_error) {
     die("Erro: " . $conn->connect_error);
 }
 
-/* -------------------------------- */
-/* CRIA E USA O BANCO               */
-/* -------------------------------- */
+
+/* CRIA E USA O BANCO */
 $conn->query("CREATE DATABASE IF NOT EXISTS fomento_corporal");
 $conn->select_db("fomento_corporal");
 
-/* -------------------------------- */
-/* TABELA USUÁRIOS                  */
-/* -------------------------------- */
+
+/* TABELA USUÁRIOS */
 $conn->query("
     CREATE TABLE IF NOT EXISTS usuarios (
         id            INT AUTO_INCREMENT PRIMARY KEY,
@@ -37,9 +34,7 @@ $conn->query("
     )
 ");
 
-/* -------------------------------- */
-/* TABELA HISTÓRICO SAÚDE           */
-/* -------------------------------- */
+/* TABELA HISTÓRICO SAÚDE */
 $conn->query("
     CREATE TABLE IF NOT EXISTS historico_saude (
         id            INT AUTO_INCREMENT PRIMARY KEY,
@@ -51,9 +46,7 @@ $conn->query("
     )
 ");
 
-/* -------------------------------- */
-/* TABELA HISTÓRICO RENDA           */
-/* -------------------------------- */
+/* TABELA HISTÓRICO RENDA */
 $conn->query("
     CREATE TABLE IF NOT EXISTS historico_renda (
         id            INT AUTO_INCREMENT PRIMARY KEY,
@@ -63,7 +56,5 @@ $conn->query("
         FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
     )
 ");
-
-
 
 echo "Banco e tabelas criados com sucesso!";
