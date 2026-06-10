@@ -11,6 +11,13 @@ const translations = {
         botaoCorpo: "Modele\n\u00a0o seu \n\u00a0\u00a0Corpo",
         idioma: "Idioma:",
         formulario_pg2: "Calcule seu IMC (Indice de Masa Corporal)",
+        btn_profissionais: "Profissionais",
+        btn_intusiastas: "Entusiastas",
+        videos_guias:"Videos guias para ajuda-lo",
+        v1: "Treino para Iniciantes",
+        v2: "Ache sua dieta",
+        v3: "Dicas de saude",
+        Nome: 'Nome',
     },
 
     en: {
@@ -23,7 +30,15 @@ const translations = {
         sobreTexto3: "Our website also provides you with interaction with professionals in the field and enthusiasts who can help you with tips and encouragement. Leave your tips and videos to help the community, becoming part of a united group focused on body health.",
         botaoCorpo: "Shape\n\u00a0 your\n\u00a0\u00a0 Body",
         idioma: "Language:",
-        formulario_pg2: "Calculate your BMI (Body Mass Index)"
+        formulario_pg2: "Calculate your BMI (Body Mass Index)",
+        btn_profissionais: "Professionals",
+        btn_intusiastas: "Enthusiasts",
+        videos_guias:"Guide videos to help you",
+        v1: "Workout for Beginners",
+        v2: "Find your diet.",
+        v3: "Health tips",
+        Nome: "Name"
+        
     },
 
     es: {
@@ -37,5 +52,12 @@ const translations = {
         botaoCorpo: "Moldea\n\u00a0 tu\n\u00a0\u00a0 Cuerpo",
         idioma: "Idioma:",
         formulario_pg2: 'Calcula tu IMC (Índice de Masa Corporal)',
+        btn_profissionais: "Profesionales",
+        btn_intusiastas: "Entusiastas",
+        videos_guias:"Vídeos guías para ayudarte",
+        v1: "Entrenamiento para principiantes",
+        v2: "Encuentra tu dieta.",
+        v3: "Consejos de salud",
+        Nome: 'Nombre',
     }
 };
